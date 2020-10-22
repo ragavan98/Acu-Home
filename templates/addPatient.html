@@ -1,0 +1,624 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{url_for('static',filename='images/otherImages/logo.png')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='fonts/iconic/css/material-design-iconic-font.min.css')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='vendor/animate/animate.css')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='vendor/animsition/css/animsition.min.css')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='vendor/select2/select2.min.css')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='vendor/daterangepicker/daterangepicker.css')}}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='css/util.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='css/main.css')}}"
+    />
+
+    <title>
+      Dashboard Boxes - Highly configurable boxes best used for showing numbers
+      in an user friendly way.
+    </title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Highly configurable boxes best used for showing numbers in an user friendly way."
+    />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+    <link
+      href="{{url_for('static',filename='css/dashboardMain.css')}}"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      /* Chart.js */
+      @-webkit-keyframes chartjs-render-animation {
+        from {
+          opacity: 0.99;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes chartjs-render-animation {
+        from {
+          opacity: 0.99;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .chartjs-render-monitor {
+        -webkit-animation: chartjs-render-animation 0.001s;
+        animation: chartjs-render-animation 0.001s;
+      }
+    </style>
+    <style>
+      ._3emE9--dark-theme .-S-tR--ff-downloader {
+        background: rgba(30, 30, 30, 0.93);
+        border: 1px solid rgba(82, 82, 82, 0.54);
+        box-shadow: 0 4px 7px rgba(30, 30, 30, 0.55);
+        color: #fff;
+      }
+      ._3emE9--dark-theme
+        .-S-tR--ff-downloader
+        ._6_Mtt--header
+        ._2VdJW--minimize-btn {
+        background: #3d4b52;
+      }
+      ._3emE9--dark-theme
+        .-S-tR--ff-downloader
+        ._6_Mtt--header
+        ._2VdJW--minimize-btn:hover {
+        background: #131415;
+      }
+      ._3emE9--dark-theme .-S-tR--ff-downloader ._10vpG--footer {
+        background: rgba(30, 30, 30, 0.93);
+      }
+      ._2mDEx--white-theme .-S-tR--ff-downloader {
+        background: #fff;
+        border: 1px solid rgba(82, 82, 82, 0.54);
+        box-shadow: 0 4px 7px rgba(30, 30, 30, 0.55);
+        color: #314c75;
+      }
+      ._2mDEx--white-theme .-S-tR--ff-downloader ._6_Mtt--header {
+        font-weight: 700;
+      }
+      ._2mDEx--white-theme
+        .-S-tR--ff-downloader
+        ._2dFLA--container
+        ._2bWNS--notice {
+        border: 0;
+        color: rgba(0, 0, 0, 0.88);
+      }
+      ._2mDEx--white-theme .-S-tR--ff-downloader ._10vpG--footer {
+        background: #fff;
+      }
+      .-S-tR--ff-downloader {
+        display: block;
+        overflow: hidden;
+        position: fixed;
+        bottom: 20px;
+        right: 7.1%;
+        width: 330px;
+        height: 180px;
+        background: rgba(30, 30, 30, 0.93);
+        border-radius: 2px;
+        color: #fff;
+        z-index: 99999999;
+        border: 1px solid rgba(82, 82, 82, 0.54);
+        box-shadow: 0 4px 7px rgba(30, 30, 30, 0.55);
+        transition: 0.5s;
+      }
+      .-S-tR--ff-downloader._3M7UQ--minimize {
+        height: 62px;
+      }
+      .-S-tR--ff-downloader._3M7UQ--minimize .nxuu4--file-info,
+      .-S-tR--ff-downloader._3M7UQ--minimize ._6_Mtt--header {
+        display: none;
+      }
+      .-S-tR--ff-downloader ._6_Mtt--header {
+        padding: 10px;
+        font-size: 17px;
+        font-family: sans-serif;
+      }
+      .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn {
+        float: right;
+        background: #f1ecec;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        padding: 2px;
+        margin-top: -10px;
+        cursor: pointer;
+      }
+      .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover {
+        background: #e2dede;
+      }
+      .-S-tR--ff-downloader ._13XQ2--error {
+        color: red;
+        padding: 10px;
+        font-size: 12px;
+        line-height: 19px;
+      }
+      .-S-tR--ff-downloader ._2dFLA--container {
+        position: relative;
+        height: 100%;
+      }
+      .-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info {
+        padding: 6px 15px 0;
+        font-family: sans-serif;
+      }
+      .-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info div {
+        margin-bottom: 5px;
+        width: 100%;
+        overflow: hidden;
+      }
+      .-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice {
+        margin-top: 21px;
+        font-size: 11px;
+      }
+      .-S-tR--ff-downloader ._10vpG--footer {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        font-weight: 700;
+      }
+      .-S-tR--ff-downloader ._10vpG--footer ._2V73d--loader {
+        animation: n0BD1--rotation 3.5s linear forwards;
+        position: absolute;
+        top: -120px;
+        left: calc(50% - 35px);
+        border-radius: 50%;
+        border: 5px solid #fff;
+        border-top-color: #a29bfe;
+        height: 70px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar {
+        width: 100%;
+        height: 18px;
+        background: #dfe6e9;
+        border-radius: 5px;
+      }
+      .-S-tR--ff-downloader
+        ._10vpG--footer
+        ._24wjw--loading-bar
+        ._1FVu9--progress-bar {
+        height: 100%;
+        background: #8bc34a;
+        border-radius: 5px;
+      }
+      .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status {
+        margin-top: 10px;
+      }
+      .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1XilH--state {
+        float: left;
+        font-size: 0.9em;
+        letter-spacing: 1pt;
+        text-transform: uppercase;
+        width: 100px;
+        height: 20px;
+        position: relative;
+      }
+      .-S-tR--ff-downloader
+        ._10vpG--footer
+        ._2KztS--status
+        ._1jiaj--percentage {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header sidebar-mobile-open closed-sidebar-mobile closed-sidebar"
+    >
+      <div class="app-header header-shadow">
+        <div class="app-header__logo">
+          <!-- <div class="logo-src"></div> -->
+          <div class="header__pane ml-auto">
+            <div>
+              <button
+                type="button"
+                class="hamburger close-sidebar-btn hamburger--elastic"
+                data-class="closed-sidebar"
+              >
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="app-header__mobile-menu">
+          <div>
+            <button
+              type="button"
+              class="hamburger hamburger--elastic mobile-toggle-nav is-active"
+            >
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="app-header__menu">
+          <span>
+            <button
+              type="button"
+              class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav"
+            >
+              <span class="btn-icon-wrapper">
+                <i class="fa fa-ellipsis-v fa-w-6"></i>
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="app-header__content">
+          <!-- <div class="app-header-left">
+            <div class="search-wrapper">
+              <div class="input-holder">
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Type to search"
+                />
+                <button class="search-icon"><span></span></button>
+              </div>
+              <button class="close"></button>
+            </div>
+            <ul class="header-menu nav">
+              <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                  <i class="nav-link-icon fa fa-database"> </i>
+                  Statistics
+                </a>
+              </li>
+              <li class="btn-group nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                  <i class="nav-link-icon fa fa-edit"></i>
+                  Projects
+                </a>
+              </li>
+              <li class="dropdown nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                  <i class="nav-link-icon fa fa-cog"></i>
+                  Settings
+                </a>
+              </li>
+            </ul>
+          </div> -->
+          <div class="app-header-right">
+            <div class="header-btn-lg pr-0">
+              <div class="widget-content p-0">
+                <div class="widget-content-wrapper">
+                  <div class="widget-content-left">
+                    <div class="btn-group">
+                      <a
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        class="p-0 btn"
+                      >
+                        <img
+                          width="42"
+                          class="rounded-circle"
+                          src="static/images/otherImages/logo.png"
+                          alt=""
+                        />
+                      </a>
+                      <div
+                        tabindex="-1"
+                        role="menu"
+                        aria-hidden="true"
+                        class="dropdown-menu dropdown-menu-right"
+                      >
+                        <a href="/logout">
+                          <button
+                            type="button"
+                            tabindex="0"
+                            class="dropdown-item"
+                          >
+                            Log Out
+                          </button>
+                        </a>
+                        <button
+                          type="button"
+                          tabindex="0"
+                          class="dropdown-item"
+                        >
+                          Dividers
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="widget-content-left ml-3 header-user-info">
+                    <div class="widget-heading">{{healer.name}}</div>
+                    <div class="widget-subheading">{{healer.healerId}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="limiter">
+          <div class="container-login100">
+            <div class="wrap-login100" style="width: 40%; margin-top: 1.5cm">
+              <form class="login100-form validate-form" method="POST">
+                <!-- <span class="login100-form-title p-b-26" style="margin-top: -1.5cm;"> ACU Home </span> -->
+                <span
+                  class="login100-form-title p-b-26"
+                  style="
+                    font-family: ui-serif;
+                    font-weight: bolder;
+                    margin-top: -1.5cm;
+                  "
+                >
+                  Add Patient
+                </span>
+                <span class="login100-form-title p-b-48">
+                  <img
+                    src="/static/images/otherImages/logo.png"
+                    alt="alternatetext"
+                    style="height: 90px; width: 90px"
+                  />
+                </span>
+                <div class="wrap-input100" style="width: 40%">
+                  <input class="input100" type="text" name="name" style="text-align: center;" required="" />
+                  <span
+                    class="focus-input100"
+                    data-placeholder="Name"
+                    style="text-align: center"
+                  ></span>
+                </div>
+                <div
+                  class="wrap-input100"
+                  style="margin-left: 60%; width: 40%; margin-top: -2.2cm"
+                >
+                  <input class="input100" type="text" name="age" style="text-align: center;" required="" />
+                  <span
+                    class="focus-input100"
+                    data-placeholder="Age"
+                    style="text-align: center"
+                  ></span>
+                </div>
+                <div class="wrap-input100" style="width: 40%">
+                  <input
+                    class="input100"
+                    type="text"
+                    name="mobile"
+                    minlength="10"
+                    maxlength="10"
+                    required=""
+                  />
+                  <span
+                    class="focus-input100"
+                    data-placeholder="Mobile No"
+                    style="text-align: center"
+                  ></span>
+                </div>
+                <div
+                  class="wrap-input100"
+                  style="margin-left: 60%; width: 40%; margin-top: -2.2cm"
+                >
+                  <input class="input100" type="text" name="city" style="text-align: center;" required="" />
+                  <span
+                    class="focus-input100"
+                    data-placeholder="City"
+                    style="text-align: center"
+                  ></span>
+                </div>
+                <div style="width: 45%; font-size: 14px; margin-top: 1.5cm">
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    style="/* color: red; */"
+                    checked
+                  />
+                  <label for="male">Male</label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    style="margin-left: 0.2cm"
+                  />
+                  <label for="male">Female</label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="other"
+                    style="margin-left: 0.2cm"
+                  />
+                  <label for="male">Other</label><br />
+                </div>
+                <div
+                  class="wrap-input100"
+                  style="margin-left: 60%; width: 40%; margin-top: -1.5cm"
+                >
+                  <input
+                    class="input100"
+                    type="text"
+                    style="text-align: center;"
+                    name="operationUnderGone"
+                    required=""
+                  />
+                  <span
+                    class="focus-input100"
+                    data-placeholder="Surgery ?"
+                    style="text-align: center"
+                  ></span>
+                </div>
+
+                <div class="wrap-input100">
+                  <input class="input100" type="text" style="text-align: center;" name="referredBy" />
+                  <span
+                    class="focus-input100"
+                    data-placeholder="Referred By"
+                    style="text-align: center"
+                  ></span>
+                </div>
+
+                {% if successMessage %}
+                <p
+                  class="error"
+                  style="
+                    -webkit-tap-highlight-color: transparent;
+                    font-weight: 400;
+                    padding: 0px;
+                    box-sizing: border-box;
+                    font-family: Poppins-Regular;
+                    font-size: 14px;
+                    line-height: 1.7;
+                    margin: 0px;
+                    color: green;
+                    text-align: center;
+                    margin-top: 0.5cm;
+                  "
+                >
+                  <strong> Success : </strong> {{ successMessage }}
+                </p>
+                {% endif %}
+
+                <div
+                  class="container-login100-form-btn"
+                  style="margin-top: -0.7cm"
+                >
+                  <div
+                    class="wrap-login100-form-btn"
+                    style="width: 30%; margin-left: 1cm"
+                  >
+                    <div class="login100-form-bgbtn" style=""></div>
+                    <button
+                      class="login100-form-btn"
+                      type="submit"
+                      style="font-size: large; /* width: 50%; */"
+                    >
+                      Submit
+                    </button>
+                  </div>
+
+                  <div
+                    class="wrap-login100-form-btn"
+                    style="width: 30%; margin-left: 1cm"
+                  >
+                    <div
+                      class="login100-form-bgbtn"
+                      style="/* color: red; */"
+                    ></div>
+                    <a
+                      href="/patientPage"
+                      class="login100-form-btn"
+                      style="font-size: large; color: black; /* width: 50%; */"
+                    >
+                      Cancel
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!--===============================================================================================-->
+        <script src="{{url_for('static',filename='vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+        <!--===============================================================================================-->
+        <script src="{{url_for('static',filename='vendor/animsition/js/animsition.min.js')}}"></script>
+        <!--===============================================================================================-->
+        <script src="{{url_for('static',filename='vendor/bootstrap/js/popper.js')}}"></script>
+        <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+        <!--===============================================================================================-->
+        <script src="{{url_for('static',filename='vendor/select2/select2.min.js')}}"></script>
+        <!--===============================================================================================-->
+        <script src="{{url_for('static',filename='vendor/daterangepicker/moment.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendor/daterangepicker/daterangepicker.js')}}"></script>
+        <!--===============================================================================================-->
+        <script src="{{url_for('static',filename='vendor/countdowntime/countdowntime.js')}}"></script>
+        <!--===============================================================================================-->
+        <script src="{{url_for('static',filename='js/main.js')}}"></script>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="{{url_for('static',filename='css/dashboardAssets/scripts/main.js')}}"
+    ></script>
+
+    <div class="jvectormap-tip"></div>
+  </body>
+</html>

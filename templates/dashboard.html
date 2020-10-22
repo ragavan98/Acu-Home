@@ -1,0 +1,10 @@
+{% if healer %}
+
+<style>
+    pre {
+        white-space: wrap
+    }
+</style>
+
+<div style="text-align: center;">Logged in as <strong>{{healer.name}}</strong> (<a href="{{ url_for('.logout') }}">Log Out</a>)</div>
+{% endif %}
